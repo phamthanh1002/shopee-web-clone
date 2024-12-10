@@ -15,7 +15,7 @@ Check out the live version here: [Shopee Web Clone](https://phamthanh1002.github
 - **CSS3**: For styling and responsiveness.
 
 ## 📸 Screenshots
-_(Add screenshots of your project here for better visual appeal.)_
+![image](https://github.com/user-attachments/assets/ed2e2325-ef80-4b80-906b-339d63bdab99)
 
 ## 🚀 Getting Started
 ### Clone the Repository
