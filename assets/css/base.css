@@ -1,0 +1,355 @@
+:root {
+    --primary-color: #EE4D2D;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --nc-primary-gradient: linear-gradient(#F43C2F, #FF6533);
+    --star-gold-color: #FFCE3E;
+
+    --header-height: 120px;
+    --navbar-height: 34px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height: 40px;
+}
+
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+/* Responsive */
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/* Test */
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        display: block;
+        opacity: 1;
+    }
+
+    to {
+        display: none;
+        opacity: 0;
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+/* Modal */
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: fadeIn 0.1s linear;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__body {
+    --growth-from: 0.7;
+    --growth-to: 1;
+    max-width: calc(100% - 32px);
+    height: auto;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    background-color: var(--white-color);
+    border-radius: 5px;
+    animation: growth linear 0.1s;
+}
+
+/* Button style */
+
+.btn {
+    min-width: 124px;
+    height: 36px;
+    margin: 0 4px;
+    border: none;
+    color: var(--black-color);
+    font-size: 1.4rem;
+    padding: 0 12px;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 2px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white-color);
+}
+
+.btn.btn--normal:hover {
+    background-color: rgb(239, 238, 238);
+}
+
+.btn.btn--size-s {
+    height: 32px;
+    font-size: 1.2rem;
+    padding: 0 8px;
+}
+
+.btn.btn--primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.btn--primary:hover {
+    background-color: #c84025;
+}
+
+.btn.btn--disabled {
+    cursor: default;
+    background-color: #c3c3c3;
+    color: #949494;
+}
+
+/* Selection */
+
+.select-input {
+    min-width: 200px;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-input__label {
+    font-size: 1.4rem;
+}
+
+.select-input__icon {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.select-input__list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% - 8px);
+    background-color: var(--white-color);
+    border-radius: 2px;
+    padding-left: 0;
+    list-style: none;
+    display: none;
+}
+
+.select-input__list::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 12px;
+    top: -4px;
+}
+
+.select-input__item {
+    padding: 12px;
+}
+
+.select-input__link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+
+.select-input__link:hover {
+    color: var(--primary-color);
+}   
+
+
+/* Pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.pagination-item {
+    margin: 0 12px;
+}
+
+.pagination-item--active .pagination-item__link {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.pagination-item--active .pagination-item__link:hover {
+    background-color: #f56548;
+}
+
+.pagination-item__link {
+    --height: 30px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #939393;
+    font-size: 1.8rem;
+    font-weight: 300;
+    min-width: 40px;
+    height: var(--height);
+    line-height: var(--height);
+    border-radius: 2px;
+}
+
+.pagination-item__icon {
+    font-size: 1.6rem;
+}
+
+/* Footer */
+.footer {
+    padding-top: 16px;
+    border-top: 4px solid var(--primary-color);
+    background-color: var(--white-color);
+}
+
+.footer__heading {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.footer__list {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-item__link {
+    display: flex;
+    text-decoration: none;
+    color: #6d6d6d;
+    font-size: 1.2rem;
+    padding: 6px 0;
+    align-items: center;
+}
+
+.footer-item__link:hover {
+    color: var(--primary-color);
+}
+
+.footer-item__link:hover .footer-item__link-icon {
+    color: #6d6d6d;
+}
+
+.footer-item__link-icon {
+    font-size: 1.6rem;
+    padding-right: 6px;
+}
+
+.footer__pay {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer__pay-img {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    padding: 4px;
+    margin: 0 6px 12px 0;
+    border-radius: 2px;
+}
+
+.footer__download {
+    display: flex;
+}
+
+.footer__download-qr {
+    width: 80px;
+    height: 80px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+}
+
+.footer__download-apps {
+    flex: 1;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer__download-app-img {
+    display: block;
+    height: 16px;
+}
+
+.footer__download-app-link {
+    color: transparent;
+    text-decoration: none;
+}
+
+.footer__bottom {
+    margin-top: 30px;
+    background-color: #f5f5f5;
+    padding: 30px 0; 
+}
+
+.footer__text {
+    text-align: center;
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 300;
+}
